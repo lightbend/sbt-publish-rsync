@@ -1,0 +1,1 @@
+addSbtPlugin("com.lightbend.sbt" % "sbt-publish-rsync" % sys.props("project.version"))

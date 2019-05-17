@@ -1,0 +1,4 @@
+> publishRsync
+$ must-mirror target/scala-2.12/api/App$.html target/rsynced/App$.html
+$ must-mirror target/scala-2.12/api/index.html target/rsynced/index.html
+$ must-mirror target/scala-2.12/api/index.js target/rsynced/index.js

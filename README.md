@@ -5,7 +5,7 @@
 [travis]:                https://travis-ci.com/lightbend/sbt-publish-rsync
 [travis-badge]:          https://travis-ci.com/lightbend/sbt-publish-rsync.svg?branch=master
 
-An [sbt](https://www.scala-sbt.org/) plugins that adds rsync capabilities to your projects.
+An [sbt](https://www.scala-sbt.org/) plugin that adds rsync capabilities to your project.
 
 ## Usage
 

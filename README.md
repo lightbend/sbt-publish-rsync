@@ -2,8 +2,8 @@
 
 [bintray]:               https://bintray.com/sbt/sbt-plugin-releases/sbt-publish-rsync
 [bintray-badge]:         https://api.bintray.com/packages/sbt/sbt-plugin-releases/sbt-publish-rsync/images/download.svg
-[travis]:                https://travis-ci.org/lightbend/sbt-publish-rsync
-[travis-badge]:          https://travis-ci.org/lightbend/sbt-publish-rsync.svg?branch=master
+[travis]:                https://travis-ci.com/lightbend/sbt-publish-rsync
+[travis-badge]:          https://travis-ci.com/lightbend/sbt-publish-rsync.svg?branch=master
 
 An [sbt](https://www.scala-sbt.org/) plugins that adds rsync capabilities to your projects.
 
@@ -32,7 +32,7 @@ To publish run the `publishRsync` sbt task.
 
 The license is Apache 2.0, see LICENSE.
 
-## Maintanance notes
+## Maintenance notes
 
 **This project is NOT supported under the Lightbend subscription.**
 

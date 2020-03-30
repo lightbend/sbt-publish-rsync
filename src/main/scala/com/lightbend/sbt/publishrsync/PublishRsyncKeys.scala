@@ -19,7 +19,8 @@ package com.lightbend.sbt.publishrsync
 import sbt._
 
 trait PublishRsyncKeys {
-  val publishRsyncArtifact = taskKey[(File, String)]("File or directory and a path to publish to")
-  val publishRsyncHost     = settingKey[String]("Hostname of a destination server to publish to")
-  val publishRsync         = taskKey[Unit]("Publish using rsync")
+  val publishRsyncArtifacts =
+    taskKey[Seq[(File, String)]]("Files or directories to publish and their respective paths to publish to")
+  val publishRsyncHost = settingKey[String]("Hostname of a destination server to publish to")
+  val publishRsync     = taskKey[Unit]("Publish using rsync")
 }

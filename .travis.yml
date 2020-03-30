@@ -1,5 +1,8 @@
+version: ~> 1.0
+import: scala/scala-dev:travis/default.yml
+env:
+  - ADOPTOPENJDK=8
 language: scala
-jdk: oraclejdk8
 scala: 2.12.8
 
 jobs:

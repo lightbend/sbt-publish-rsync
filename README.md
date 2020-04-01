@@ -10,7 +10,7 @@ An [sbt](https://www.scala-sbt.org/) plugin that adds rsync capabilities to your
 ## Usage
 
 ```scala
-addSbtPlugin("com.lightbend.paradox" % "sbt-publish-rsync" % "<latest>")
+addSbtPlugin("com.lightbend.sbt" % "sbt-publish-rsync" % "<latest>")
 ```
 
 Enable the plugin in your project `build.sbt` file:
@@ -22,7 +22,7 @@ enablePlugins(PublishRsyncPlugin)
 Configure the directory to be deployed, directory on the remote server, and remote server address:
 
 ```scala
-publishRsyncArtifact := ((Compile / doc).value, "relative/to/home/remote/directory")
+publishRsyncArtifacts += ((Compile / doc).value, "relative/to/home/remote/directory")
 publishRsyncHost := "doc.server.com"
 ```
 

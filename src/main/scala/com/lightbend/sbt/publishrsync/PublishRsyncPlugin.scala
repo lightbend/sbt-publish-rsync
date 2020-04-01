@@ -33,14 +33,18 @@ object PublishRsyncPlugin extends AutoPlugin {
   override def projectSettings = publishRsyncSettings()
 
   def publishRsyncSettings(): Seq[Setting[_]] = Seq(
+    publishRsyncArtifacts := Nil,
     publishRsync := {
-      val (from, to) = publishRsyncArtifact.value
-      Process(Seq("rsync", "-azP", s"$from/", s"${publishRsyncHost.value}:$to"),
-              None,
-              "RSYNC_RSH" -> "ssh -o StrictHostKeyChecking=no").! match {
-        case 0 => () // success
-        case error => throw new IllegalStateException(s"rsync command exited with an error code $error")
+      publishRsyncArtifacts.value.foreach {
+        case (from, to) => rsync(from, publishRsyncHost.value, to)
       }
     }
   )
+
+  @throws[IllegalStateException]
+  private def rsync(from: File, toHost: String, toPath: String): Unit =
+    Process(Seq("rsync", "-azP", s"$from/", s"$toHost:$toPath"), None, "RSYNC_RSH" -> "ssh -o StrictHostKeyChecking=no").! match {
+      case 0 => () // success
+      case error => throw new IllegalStateException(s"rsync command exited with an error code $error")
+    }
 }

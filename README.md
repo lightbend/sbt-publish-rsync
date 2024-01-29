@@ -1,9 +1,4 @@
-# sbt-publish-rsync [![bintray-badge][]][bintray] [![travis-badge][]][travis]
-
-[bintray]:               https://bintray.com/sbt/sbt-plugin-releases/sbt-publish-rsync
-[bintray-badge]:         https://api.bintray.com/packages/sbt/sbt-plugin-releases/sbt-publish-rsync/images/download.svg
-[travis]:                https://travis-ci.com/lightbend/sbt-publish-rsync
-[travis-badge]:          https://travis-ci.com/lightbend/sbt-publish-rsync.svg?branch=master
+# sbt-publish-rsync
 
 An [sbt](https://www.scala-sbt.org/) plugin that adds rsync capabilities to your project.
 

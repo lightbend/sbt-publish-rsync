@@ -14,7 +14,6 @@ jobs:
   check-code-style:
     name: Checks
     runs-on: ubuntu-22.04
-    if: github.repository == 'lightbend/sbt-publish-rsync'
     steps:
       - name: Checkout
         uses: actions/checkout@v3.1.0

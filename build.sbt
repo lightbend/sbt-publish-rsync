@@ -1,4 +1,4 @@
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.18"
 
 crossSbtVersions := List("1.0.0")
 organization     := "com.lightbend.sbt"

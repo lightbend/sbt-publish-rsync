@@ -1,8 +1,9 @@
 scalaVersion := "2.12.18"
 
-crossSbtVersions := List("1.0.0")
-organization     := "com.lightbend.sbt"
-name             := "sbt-publish-rsync"
+crossSbtVersions    := List("1.0.0")
+organization        := "com.lightbend.sbt"
+name                := "sbt-publish-rsync"
+sonatypeProfileName := "com.lightbend"
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 homepage := Some(url("https://github.com/lightbend/sbt-publish-rsync"))

@@ -1,0 +1,37 @@
+name: Publish
+
+on:
+  push:
+    tags: [ "*" ]
+
+permissions:
+  contents: read
+
+jobs:
+  sbt:
+    name: sbt publish
+    runs-on: ubuntu-22.04
+    if: github.event.repository.fork == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+        with:
+          # we don't know what commit the last tag was it's safer to get entire repo so previousStableVersion resolves
+          fetch-depth: 0
+
+      - name: Cache Coursier cache
+        uses: coursier/cache-action@v6.4.0
+
+      - name: Set up JDK 11
+        uses: coursier/setup-action@v1.3.0
+        with:
+          jvm: temurin:1.11.0.17
+
+      - name: Publish
+        run: |-
+          sbt +publishSigned
+        env:
+          PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+          PGP_SECRET: ${{ secrets.PGP_SECRET }}
+          PUBLISH_USER: ${{ secrets.PUBLISH_USER }}
+          PUBLISH_PASSWORD: ${{ secrets.PUBLISH_PASSWORD }}

@@ -29,9 +29,9 @@ jobs:
 
       - name: Publish
         run: |-
-          sbt +publishSigned
+          sbt ci-release
         env:
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
-          PUBLISH_USER: ${{ secrets.PUBLISH_USER }}
-          PUBLISH_PASSWORD: ${{ secrets.PUBLISH_PASSWORD }}
+          PUBLISH_USER: ${{ secrets.SONATYPE_USERNAME }}
+          PUBLISH_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
